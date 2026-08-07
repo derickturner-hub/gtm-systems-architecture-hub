@@ -1,10 +1,10 @@
-# 🚀 Enterprise RevOps Architecture & Agentic Automation Portfolio
+# Enterprise RevOps Architecture Portfolio
 
-Welcome to the master architecture hub for enterprise-grade Revenue Operations (RevOps) automation engines. This portfolio showcases five production-ready, event-driven pipelines engineered to eliminate data pollution, enforce strict JSON Schema contracts, execute deterministic code-based scoring, and orchestrate multi-channel routing.
+Master architecture repository for production-ready Revenue Operations automation pipelines. This organization contains event-driven systems built around strict JSON Schema contracts, deterministic JavaScript scoring modules, and n8n workflow orchestration.
 
 ---
 
-## 🏗 System Architecture & End-to-End Revenue Lifecycle
+## System Architecture
 
 ```mermaid
 flowchart TD
