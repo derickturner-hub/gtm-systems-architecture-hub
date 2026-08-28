@@ -50,7 +50,9 @@ Accounts flagged above the health-score threshold (Pipeline 4), segmented by ARR
 
 **Data source:** Pipeline 4 telemetry scoring output, staged into a CRM object and visualized via Looker Studio or Tableau connector. Panel structure is designed to be BI-tool agnostic, swap either platform in without touching the underlying scoring logic.
 
-*[Insert mockup screenshot or embedded Looker Studio link here once built.]*
+The mockup below runs entirely on synthetic data generated to match the schema each pipeline produces in production, not a live Looker Studio or Tableau connection.
+
+[View the live dashboard mockup](dashboard-mockup.html)
 
 ---
 
