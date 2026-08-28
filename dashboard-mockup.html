@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Revenue Operations Dashboard</title>
+<style>
+  :root {
+    --bg-page: #0b0e14;
+    --bg-card: #12161f;
+    --bg-card-raised: #171c27;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --text-primary: #eef0f3;
+    --text-secondary: #9aa1ac;
+    --text-muted: #6b7280;
+    --accent-good: #22c58f;
+    --accent-good-dim: rgba(34,197,143,0.14);
+    --accent-warn: #e66767;
+    --accent-warn-dim: rgba(230,103,103,0.14);
+    --accent-neutral: #3987e5;
+    --grid-line: #232834;
+    --cat-1: #3987e5;
+    --cat-2: #d95926;
+    --cat-3: #199e70;
+    --cat-4: #c98500;
+    --cat-5: #d55181;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    padding: 32px 24px 64px;
+  }
+
+  .page {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  header.masthead {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header.masthead h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  header.masthead p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 760px;
+  }
+
+  header.masthead p.mockup-note {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  header.masthead p.mockup-note code {
+    background: var(--bg-card-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 11.5px;
+    color: var(--text-secondary);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 880px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .card-subtitle {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .stat-tile {
+    flex: 1 1 140px;
+    background: var(--bg-card-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    min-width: 130px;
+  }
+
+  .stat-tile .stat-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .stat-tile .stat-value {
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .stat-tile .stat-value.good { color: var(--accent-good); }
+  .stat-tile .stat-value.warn { color: var(--accent-warn); }
+  .stat-tile .stat-value.neutral { color: var(--text-primary); }
+
+  .stat-tile .stat-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  .chart-wrap {
+    position: relative;
+    height: 190px;
+    margin-bottom: 4px;
+  }
+
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-swatch {
+    width: 9px;
+    height: 9px;
+    border-radius: 2.5px;
+    flex-shrink: 0;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 480px;
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 9px 12px;
+    background: var(--bg-card-raised);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  tbody td.primary { color: var(--text-primary); font-weight: 500; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .badge.open, .badge.escalated, .badge.in_progress {
+    background: var(--accent-warn-dim);
+    color: var(--accent-warn);
+  }
+
+  .badge.seat_expansion, .badge.upsell_tier, .badge.add_on_module {
+    background: var(--accent-good-dim);
+    color: var(--accent-good);
+  }
+
+  .bool-yes { color: var(--accent-good); font-weight: 600; }
+  .bool-no { color: var(--text-muted); }
+
+  .empty-state {
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 20px 4px;
+    text-align: center;
+  }
+
+  footer.foot-note {
+    margin-top: 28px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <h1>Executive Revenue Operations Dashboard</h1>
+    <p>Mockup of the Executive Dashboard Layer described in the README, fed by Pipeline&nbsp;3 (SLA Round-Robin Routing) and Pipeline&nbsp;4 (Churn &amp; Expansion Intelligence) telemetry, plus Pipeline&nbsp;2 (Ingestion, Guardrails &amp; DLQ) data-quality output.</p>
+    <p class="mockup-note">This is a mockup built entirely on synthetic data (<code>/data</code>) generated to match each pipeline's production schema &mdash; not a connection to a live BI tool.</p>
+  </header>
+
+  <div class="grid">
+
+    <section class="card" id="panel-sla">
+      <div class="card-head">
+        <div class="card-title">Speed-to-Lead Velocity &amp; SLA Compliance</div>
+      </div>
+      <div class="card-subtitle">Pipeline 3 &middot; 15-minute claim window</div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-label">SLA Compliance Rate</div>
+          <div class="stat-value good" id="sla-compliance-value">&mdash;</div>
+          <div class="stat-sub" id="sla-compliance-sub"></div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">Total Breaches</div>
+          <div class="stat-value warn" id="sla-breach-count">&mdash;</div>
+          <div class="stat-sub">across 4-week window</div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="sla-chart"></canvas></div>
+    </section>
+
+    <section class="card" id="panel-dlq">
+      <div class="card-head">
+        <div class="card-title">Data Hygiene &amp; DLQ Recovery Volume</div>
+      </div>
+      <div class="card-subtitle">Pipeline 2 &middot; quarantine &amp; reprocessing</div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-label">Recovery Rate</div>
+          <div class="stat-value good" id="dlq-recovery-value">&mdash;</div>
+          <div class="stat-sub" id="dlq-recovery-sub"></div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-label">Records Quarantined</div>
+          <div class="stat-value neutral" id="dlq-total-count">&mdash;</div>
+          <div class="stat-sub">across 4-week window</div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="dlq-chart"></canvas></div>
+      <div class="legend-row" id="dlq-legend"></div>
+    </section>
+
+    <section class="card" id="panel-risk">
+      <div class="card-head">
+        <div class="card-title">Revenue at Risk Accounts</div>
+      </div>
+      <div class="card-subtitle">Pipeline 4 &middot; telemetry score &lt; 40</div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-label">Total ARR at Risk</div>
+          <div class="stat-value warn" id="risk-arr-value">&mdash;</div>
+          <div class="stat-sub" id="risk-account-count"></div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>ARR Band</th>
+              <th>ARR</th>
+              <th>Score</th>
+              <th>CS Action</th>
+            </tr>
+          </thead>
+          <tbody id="risk-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" id="panel-expansion">
+      <div class="card-head">
+        <div class="card-title">Expansion ARR Opportunities</div>
+      </div>
+      <div class="card-subtitle">Pipeline 4 &middot; telemetry score &gt; 80</div>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-label">Total Expansion ARR</div>
+          <div class="stat-value good" id="expansion-arr-value">&mdash;</div>
+          <div class="stat-sub" id="expansion-account-count"></div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>ARR Band</th>
+              <th>ARR</th>
+              <th>Score</th>
+              <th>Signal</th>
+              <th>AE Task</th>
+            </tr>
+          </thead>
+          <tbody id="expansion-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="foot-note">Synthetic data &middot; generated for illustration only &middot; not measured production output</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  Chart.defaults.font.family = "system-ui, -apple-system, 'Segoe UI', sans-serif";
+  Chart.defaults.color = "#9aa1ac";
+
+  function parseCSV(text) {
+    var lines = text.replace(/\r\n/g, "\n").split("\n").filter(function (l) { return l.trim().length > 0; });
+    var headers = lines[0].split(",");
+    return lines.slice(1).map(function (line) {
+      var cells = line.split(",");
+      var row = {};
+      headers.forEach(function (h, i) { row[h.trim()] = (cells[i] !== undefined ? cells[i].trim() : ""); });
+      return row;
+    });
+  }
+
+  function fetchCSV(path) {
+    return fetch(path).then(function (res) {
+      if (!res.ok) throw new Error("Failed to load " + path + ": " + res.status);
+      return res.text();
+    }).then(parseCSV);
+  }
+
+  function fmtPct(n) { return n.toFixed(1) + "%"; }
+
+  function fmtUSD(n) {
+    return "$" + Math.round(n).toLocaleString("en-US");
+  }
+
+  function fmtUSDCompact(n) {
+    if (n >= 1000000) return "$" + (n / 1000000).toFixed(2) + "M";
+    if (n >= 1000) return "$" + (n / 1000).toFixed(0) + "K";
+    return "$" + Math.round(n);
+  }
+
+  function weekIndex(date, minDate) {
+    var diffMs = date.getTime() - minDate.getTime();
+    var diffDays = diffMs / (1000 * 60 * 60 * 24);
+    return Math.min(3, Math.floor(diffDays / 7));
+  }
+
+  function statusBadge(value) {
+    var cls = value.replace(/\s+/g, "_").toLowerCase();
+    return '<span class="badge ' + cls + '">' + value.replace(/_/g, " ") + "</span>";
+  }
+
+  // ---------- Panel 1: SLA Routing ----------
+  function renderSLA(rows) {
+    var total = rows.length;
+    var minDate = rows.reduce(function (min, r) {
+      var d = new Date(r.created_ts);
+      return (!min || d < min) ? d : min;
+    }, null);
+
+    var weeklyBreaches = [0, 0, 0, 0];
+    var breachCount = 0;
+
+    rows.forEach(function (r) {
+      var created = new Date(r.created_ts);
+      var claimed = new Date(r.claimed_ts);
+      var slaWindow = parseFloat(r.sla_window_minutes);
+      var timeToClaimMin = (claimed.getTime() - created.getTime()) / 60000;
+      var breached = timeToClaimMin > slaWindow;
+      if (breached) {
+        breachCount++;
+        weeklyBreaches[weekIndex(created, minDate)]++;
+      }
+    });
+
+    var complianceRate = ((total - breachCount) / total) * 100;
+
+    document.getElementById("sla-compliance-value").textContent = fmtPct(complianceRate);
+    document.getElementById("sla-compliance-sub").textContent = (total - breachCount) + " of " + total + " leads claimed in window";
+    document.getElementById("sla-breach-count").textContent = String(breachCount);
+
+    var ctx = document.getElementById("sla-chart").getContext("2d");
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+        datasets: [{
+          label: "SLA breaches",
+          data: weeklyBreaches,
+          borderColor: "#e66767",
+          backgroundColor: "rgba(230,103,103,0.12)",
+          borderWidth: 2,
+          pointBackgroundColor: "#e66767",
+          pointBorderColor: "#12161f",
+          pointBorderWidth: 1.5,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: "#1a1f2a",
+            borderColor: "#232834",
+            borderWidth: 1,
+            titleColor: "#eef0f3",
+            bodyColor: "#9aa1ac",
+            padding: 10,
+            callbacks: {
+              label: function (item) { return item.parsed.y + " breach" + (item.parsed.y === 1 ? "" : "es"); }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { color: "#232834", drawTicks: false }, ticks: { color: "#6b7280", font: { size: 11 } } },
+          y: {
+            beginAtZero: true,
+            grid: { color: "#232834", drawTicks: false },
+            ticks: { color: "#6b7280", font: { size: 11 }, precision: 0 }
+          }
+        }
+      }
+    });
+  }
+
+  // ---------- Panel 2: DLQ Records ----------
+  function renderDLQ(rows) {
+    var total = rows.length;
+    var reprocessed = rows.filter(function (r) { return r.reprocessed === "TRUE"; }).length;
+    var recoveryRate = (reprocessed / total) * 100;
+
+    document.getElementById("dlq-recovery-value").textContent = fmtPct(recoveryRate);
+    document.getElementById("dlq-recovery-sub").textContent = reprocessed + " of " + total + " reprocessed";
+    document.getElementById("dlq-total-count").textContent = String(total);
+
+    var failureTypes = ["missing_required_field", "malformed_email", "invalid_phone_format", "duplicate_record", "schema_type_mismatch"];
+    var colors = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181"];
+    var counts = failureTypes.map(function (ft) {
+      return rows.filter(function (r) { return r.failure_type === ft; }).length;
+    });
+
+    var ctx = document.getElementById("dlq-chart").getContext("2d");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Quarantined"],
+        datasets: failureTypes.map(function (ft, i) {
+          return {
+            label: ft.replace(/_/g, " "),
+            data: [counts[i]],
+            backgroundColor: colors[i],
+            borderRadius: 4,
+            borderSkipped: false,
+            barThickness: 46
+          };
+        })
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: "#1a1f2a",
+            borderColor: "#232834",
+            borderWidth: 1,
+            titleColor: "#eef0f3",
+            bodyColor: "#9aa1ac",
+            padding: 10
+          }
+        },
+        scales: {
+          x: {
+            stacked: true,
+            beginAtZero: true,
+            grid: { color: "#232834", drawTicks: false },
+            ticks: { color: "#6b7280", font: { size: 11 }, precision: 0 }
+          },
+          y: { stacked: true, grid: { display: false }, ticks: { display: false } }
+        }
+      }
+    });
+
+    var legend = document.getElementById("dlq-legend");
+    legend.innerHTML = failureTypes.map(function (ft, i) {
+      return '<span class="legend-item"><span class="legend-swatch" style="background:' + colors[i] + '"></span>' +
+        ft.replace(/_/g, " ") + " (" + counts[i] + ")</span>";
+    }).join("");
+  }
+
+  // ---------- Panel 3 & 4: Account Telemetry ----------
+  function renderAccounts(rows) {
+    var atRisk = rows.filter(function (r) { return parseFloat(r.telemetry_score) < 40; })
+      .sort(function (a, b) { return parseFloat(b.arr_value) - parseFloat(a.arr_value); });
+
+    var expansion = rows.filter(function (r) { return parseFloat(r.telemetry_score) > 80; })
+      .sort(function (a, b) { return parseFloat(b.arr_value) - parseFloat(a.arr_value); });
+
+    var riskTotal = atRisk.reduce(function (sum, r) { return sum + parseFloat(r.arr_value); }, 0);
+    var expansionTotal = expansion.reduce(function (sum, r) { return sum + parseFloat(r.arr_value); }, 0);
+
+    document.getElementById("risk-arr-value").textContent = fmtUSDCompact(riskTotal);
+    document.getElementById("risk-account-count").textContent = atRisk.length + " accounts flagged";
+    document.getElementById("expansion-arr-value").textContent = fmtUSDCompact(expansionTotal);
+    document.getElementById("expansion-account-count").textContent = expansion.length + " accounts flagged";
+
+    var riskBody = document.getElementById("risk-table-body");
+    if (atRisk.length === 0) {
+      riskBody.innerHTML = '<tr><td colspan="5" class="empty-state">No at-risk accounts</td></tr>';
+    } else {
+      riskBody.innerHTML = atRisk.map(function (r) {
+        return "<tr>" +
+          '<td class="primary">' + r.account_id + "</td>" +
+          "<td>" + r.arr_band + "</td>" +
+          "<td>" + fmtUSD(parseFloat(r.arr_value)) + "</td>" +
+          "<td>" + parseFloat(r.telemetry_score).toFixed(1) + "</td>" +
+          "<td>" + statusBadge(r.cs_action_status) + "</td>" +
+          "</tr>";
+      }).join("");
+    }
+
+    var expansionBody = document.getElementById("expansion-table-body");
+    if (expansion.length === 0) {
+      expansionBody.innerHTML = '<tr><td colspan="6" class="empty-state">No expansion accounts</td></tr>';
+    } else {
+      expansionBody.innerHTML = expansion.map(function (r) {
+        return "<tr>" +
+          '<td class="primary">' + r.account_id + "</td>" +
+          "<td>" + r.arr_band + "</td>" +
+          "<td>" + fmtUSD(parseFloat(r.arr_value)) + "</td>" +
+          "<td>" + parseFloat(r.telemetry_score).toFixed(1) + "</td>" +
+          "<td>" + statusBadge(r.expansion_signal_type) + "</td>" +
+          '<td class="' + (r.ae_task_created === "TRUE" ? "bool-yes" : "bool-no") + '">' + (r.ae_task_created === "TRUE" ? "Yes" : "No") + "</td>" +
+          "</tr>";
+      }).join("");
+    }
+  }
+
+  function showLoadError(err) {
+    console.error(err);
+    document.querySelectorAll(".card").forEach(function (card) {
+      var wrap = card.querySelector(".chart-wrap") || card.querySelector(".table-wrap");
+      if (wrap) {
+        wrap.innerHTML = '<div class="empty-state">Could not load /data CSVs. Serve this file over HTTP (not file://) from the repo root.</div>';
+      }
+    });
+  }
+
+  Promise.all([
+    fetchCSV("data/sla_routing_events.csv"),
+    fetchCSV("data/dlq_records.csv"),
+    fetchCSV("data/account_telemetry_scores.csv")
+  ]).then(function (results) {
+    renderSLA(results[0]);
+    renderDLQ(results[1]);
+    renderAccounts(results[2]);
+  }).catch(showLoadError);
+})();
+</script>
+</body>
+</html>
