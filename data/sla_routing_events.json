@@ -1,0 +1,602 @@
+[
+  {
+    "lead_id": "LEAD-0007",
+    "created_ts": "2026-07-27T15:34:17Z",
+    "claimed_ts": "2026-07-27T16:12:17Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-07-27T15:53:17Z"
+  },
+  {
+    "lead_id": "LEAD-0004",
+    "created_ts": "2026-07-28T14:54:59Z",
+    "claimed_ts": "2026-07-28T14:58:59Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0027",
+    "created_ts": "2026-07-28T21:23:58Z",
+    "claimed_ts": "2026-07-28T21:30:58Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-006",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0012",
+    "created_ts": "2026-07-29T10:37:24Z",
+    "claimed_ts": "2026-07-29T10:46:24Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-008",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0016",
+    "created_ts": "2026-07-29T13:23:21Z",
+    "claimed_ts": "2026-07-29T14:03:21Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-07-29T13:41:21Z"
+  },
+  {
+    "lead_id": "LEAD-0037",
+    "created_ts": "2026-07-29T14:53:40Z",
+    "claimed_ts": "2026-07-29T14:56:40Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0039",
+    "created_ts": "2026-07-30T10:00:54Z",
+    "claimed_ts": "2026-07-30T10:07:54Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0017",
+    "created_ts": "2026-07-31T04:57:51Z",
+    "claimed_ts": "2026-07-31T05:11:51Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0010",
+    "created_ts": "2026-08-01T00:40:57Z",
+    "claimed_ts": "2026-08-01T00:54:57Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-006",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0018",
+    "created_ts": "2026-08-01T05:40:30Z",
+    "claimed_ts": "2026-08-01T06:04:30Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-01T05:59:30Z"
+  },
+  {
+    "lead_id": "LEAD-0047",
+    "created_ts": "2026-08-01T11:58:39Z",
+    "claimed_ts": "2026-08-01T12:12:39Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0052",
+    "created_ts": "2026-08-01T18:20:07Z",
+    "claimed_ts": "2026-08-01T19:04:07Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-006",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-01T18:38:07Z"
+  },
+  {
+    "lead_id": "LEAD-0013",
+    "created_ts": "2026-08-02T09:25:58Z",
+    "claimed_ts": "2026-08-02T09:27:58Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0032",
+    "created_ts": "2026-08-03T02:40:52Z",
+    "claimed_ts": "2026-08-03T02:52:52Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0038",
+    "created_ts": "2026-08-04T02:23:33Z",
+    "claimed_ts": "2026-08-04T02:33:33Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0022",
+    "created_ts": "2026-08-04T15:23:27Z",
+    "claimed_ts": "2026-08-04T15:35:27Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0046",
+    "created_ts": "2026-08-05T00:08:40Z",
+    "claimed_ts": "2026-08-05T00:23:40Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0060",
+    "created_ts": "2026-08-06T02:21:28Z",
+    "claimed_ts": "2026-08-06T02:28:28Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0059",
+    "created_ts": "2026-08-06T14:45:46Z",
+    "claimed_ts": "2026-08-06T14:58:46Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0003",
+    "created_ts": "2026-08-06T22:43:54Z",
+    "claimed_ts": "2026-08-06T22:52:54Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0053",
+    "created_ts": "2026-08-07T22:58:55Z",
+    "claimed_ts": "2026-08-07T23:02:55Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-001",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0023",
+    "created_ts": "2026-08-08T05:13:31Z",
+    "claimed_ts": "2026-08-08T05:21:31Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0045",
+    "created_ts": "2026-08-09T02:52:13Z",
+    "claimed_ts": "2026-08-09T03:05:13Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0021",
+    "created_ts": "2026-08-09T07:03:06Z",
+    "claimed_ts": "2026-08-09T07:13:06Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0028",
+    "created_ts": "2026-08-09T07:56:26Z",
+    "claimed_ts": "2026-08-09T08:00:26Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0051",
+    "created_ts": "2026-08-12T01:40:09Z",
+    "claimed_ts": "2026-08-12T01:41:09Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-008",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0026",
+    "created_ts": "2026-08-12T01:49:00Z",
+    "claimed_ts": "2026-08-12T01:53:00Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-001",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0009",
+    "created_ts": "2026-08-12T16:09:39Z",
+    "claimed_ts": "2026-08-12T16:27:39Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-12T16:28:39Z"
+  },
+  {
+    "lead_id": "LEAD-0043",
+    "created_ts": "2026-08-12T20:19:59Z",
+    "claimed_ts": "2026-08-12T20:24:59Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0008",
+    "created_ts": "2026-08-12T20:25:14Z",
+    "claimed_ts": "2026-08-12T20:45:14Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-12T20:42:14Z"
+  },
+  {
+    "lead_id": "LEAD-0011",
+    "created_ts": "2026-08-13T00:44:14Z",
+    "claimed_ts": "2026-08-13T00:49:14Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0020",
+    "created_ts": "2026-08-13T13:55:13Z",
+    "claimed_ts": "2026-08-13T14:06:13Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0015",
+    "created_ts": "2026-08-13T21:20:07Z",
+    "claimed_ts": "2026-08-13T21:42:07Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-13T21:36:07Z"
+  },
+  {
+    "lead_id": "LEAD-0035",
+    "created_ts": "2026-08-13T21:45:23Z",
+    "claimed_ts": "2026-08-13T21:48:23Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0019",
+    "created_ts": "2026-08-14T01:03:37Z",
+    "claimed_ts": "2026-08-14T01:09:37Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0049",
+    "created_ts": "2026-08-14T11:38:28Z",
+    "claimed_ts": "2026-08-14T11:47:28Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0024",
+    "created_ts": "2026-08-14T18:05:51Z",
+    "claimed_ts": "2026-08-14T18:20:51Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0002",
+    "created_ts": "2026-08-16T19:34:28Z",
+    "claimed_ts": "2026-08-16T19:50:28Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-001",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-16T19:50:28Z"
+  },
+  {
+    "lead_id": "LEAD-0034",
+    "created_ts": "2026-08-17T03:09:41Z",
+    "claimed_ts": "2026-08-17T03:16:41Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0044",
+    "created_ts": "2026-08-17T10:32:17Z",
+    "claimed_ts": "2026-08-17T11:02:17Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-17T10:48:17Z"
+  },
+  {
+    "lead_id": "LEAD-0006",
+    "created_ts": "2026-08-18T03:21:59Z",
+    "claimed_ts": "2026-08-18T03:26:59Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0031",
+    "created_ts": "2026-08-18T14:36:04Z",
+    "claimed_ts": "2026-08-18T14:41:04Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0040",
+    "created_ts": "2026-08-19T01:19:03Z",
+    "claimed_ts": "2026-08-19T01:24:03Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0057",
+    "created_ts": "2026-08-19T09:44:38Z",
+    "claimed_ts": "2026-08-19T10:05:38Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-19T10:02:38Z"
+  },
+  {
+    "lead_id": "LEAD-0055",
+    "created_ts": "2026-08-19T22:13:11Z",
+    "claimed_ts": "2026-08-19T22:26:11Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0030",
+    "created_ts": "2026-08-20T13:38:47Z",
+    "claimed_ts": "2026-08-20T13:53:47Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0048",
+    "created_ts": "2026-08-20T23:28:12Z",
+    "claimed_ts": "2026-08-20T23:50:12Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-20T23:45:12Z"
+  },
+  {
+    "lead_id": "LEAD-0036",
+    "created_ts": "2026-08-21T01:38:28Z",
+    "claimed_ts": "2026-08-21T01:40:28Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-008",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0058",
+    "created_ts": "2026-08-21T22:47:04Z",
+    "claimed_ts": "2026-08-21T22:54:04Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-010",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0050",
+    "created_ts": "2026-08-22T01:54:24Z",
+    "claimed_ts": "2026-08-22T02:04:24Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-001",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0056",
+    "created_ts": "2026-08-22T04:38:51Z",
+    "claimed_ts": "2026-08-22T04:41:51Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-003",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0042",
+    "created_ts": "2026-08-22T09:36:56Z",
+    "claimed_ts": "2026-08-22T09:49:56Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0005",
+    "created_ts": "2026-08-22T18:54:10Z",
+    "claimed_ts": "2026-08-22T18:58:10Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-007",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0001",
+    "created_ts": "2026-08-22T19:23:53Z",
+    "claimed_ts": "2026-08-22T19:33:53Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0014",
+    "created_ts": "2026-08-23T03:10:26Z",
+    "claimed_ts": "2026-08-23T03:24:26Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-005",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0041",
+    "created_ts": "2026-08-23T04:33:17Z",
+    "claimed_ts": "2026-08-23T05:10:17Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-001",
+    "sla_breached": "TRUE",
+    "escalated": "TRUE",
+    "escalation_ts": "2026-08-23T04:49:17Z"
+  },
+  {
+    "lead_id": "LEAD-0025",
+    "created_ts": "2026-08-23T08:53:36Z",
+    "claimed_ts": "2026-08-23T09:04:36Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-004",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0033",
+    "created_ts": "2026-08-23T14:02:28Z",
+    "claimed_ts": "2026-08-23T14:07:28Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-009",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0029",
+    "created_ts": "2026-08-23T20:48:45Z",
+    "claimed_ts": "2026-08-23T20:52:45Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-006",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  },
+  {
+    "lead_id": "LEAD-0054",
+    "created_ts": "2026-08-23T21:01:07Z",
+    "claimed_ts": "2026-08-23T21:03:07Z",
+    "sla_window_minutes": 15,
+    "claimed_by_rep_id": "REP-002",
+    "sla_breached": "FALSE",
+    "escalated": "FALSE",
+    "escalation_ts": ""
+  }
+]
