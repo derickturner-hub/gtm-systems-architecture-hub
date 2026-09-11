@@ -8,19 +8,6 @@ The focus is not automation for its own sake. The focus is building explainable,
 
 ---
 
-## What This Portfolio Demonstrates
-
-* Event-driven GTM workflow orchestration using n8n, webhooks, REST APIs, and Node.js
-* Schema-validated data contracts using JSON Schema Draft 2020-12
-* Deterministic routing, scoring, escalation, and approval logic
-* Dead Letter Queue patterns for exception handling, failed event review, and operational recovery
-* CI validation using GitHub Actions and AJV CLI
-* AI-assisted workflow design where LLMs support execution without becoming an uncontrolled source of truth
-* CRM and marketing operations architecture patterns for lead lifecycle governance, enrichment, attribution, and sales handoff quality
-* Practical revenue systems thinking across demand capture, pipeline movement, customer health, expansion signals, and content operations
-
----
-
 ## Architectural Suite Breakdown
 
 | Pipeline Repository | Core Problem Solved | Key Tech and Guardrails |
